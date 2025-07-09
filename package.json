@@ -1,0 +1,16 @@
+{
+  "name": "letsinnovate-website",
+  "version": "1.0.0",
+  "description": "This repository contains the source code for the Letsinnovate marketing website, built with native HTML, CSS, and JavaScript. The project is designed to be lightweight, fast, and easy to modify without requiring any complex build tools or package managers.",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
