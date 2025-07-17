@@ -3,10 +3,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Function to fetch and inject HTML content
     const loadComponent = (componentPath, targetElementId) => {
-        return fetch(componentPath)
+        // Determine base path based on current page URL
+        const isBlogPage = window.location.pathname.includes('/blog/');
+        const basePath = isBlogPage ? '../' : '';
+        const fullPath = `${basePath}${componentPath}`;
+
+        return fetch(fullPath)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`Failed to fetch ${componentPath}: ${response.statusText}`);
+                    throw new Error(`Failed to fetch ${fullPath}: ${response.statusText}`);
                 }
                 return response.text();
             })
@@ -35,9 +40,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     if (isVisible === "false") {
                         nav.setAttribute("data-visible", true);
                         navToggle.setAttribute("aria-expanded", true);
+                        document.body.classList.add("nav-open"); // Lock scroll
                     } else {
                         nav.setAttribute("data-visible", false);
                         navToggle.setAttribute("aria-expanded", false);
+                        document.body.classList.remove("nav-open"); // Unlock scroll
                     }
                 });
             }

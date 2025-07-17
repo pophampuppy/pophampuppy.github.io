@@ -38,7 +38,7 @@ To view the website correctly, you need to serve the files from a simple local w
     Alternatively, you can use a tool like the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension for Visual Studio Code.
 
 4.  **Open your web browser** and go to the following address:
-    [http://localhost:8000](http://localhost:8000)
+    [   ](http://localhost:8000)
 
 You should now see the Letsinnovate homepage!
 
